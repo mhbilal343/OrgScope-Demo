@@ -1,0 +1,220 @@
+/* ==========================================================================
+   Fonts
+   ========================================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&display=swap');
+
+/* ==========================================================================
+   Reset & Base
+   ========================================================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+}
+
+body {
+  background-color: #f7f7f7;
+  font-family: 'Open Sans', sans-serif;
+}
+
+/* ==========================================================================
+   Top Navigation
+   ========================================================================== */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 50px;
+  height: 100px;
+  padding: 0 40px;
+  background-color: #ffffff;
+}
+
+.nav-links {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+}
+
+/* Regular Link Styles */
+.nav-links a {
+  text-decoration: none;
+  color: #000000;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.nav-links a:hover {
+  color: #888888;
+}
+
+/* Button-Specific Styles (Higher Specificity) */
+.nav-links a.nav-btn {
+  color: #ffffff;
+  background-color: #fe3131b3;
+  padding: 10px 18px;
+  border-radius: 8px;
+  display: inline-block;
+}
+
+.nav-links a.nav-btn:hover {
+  background-color: #c22323b3;
+  color: #ffffff;
+}
+
+.logo {
+  height: 100px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.logo img {
+  height: 60px;
+  width: auto;
+  display: block;
+}
+/* ==========================================================================
+   Index Banner (wavy gradient)
+   ========================================================================== */
+.wavy-banner {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  background: linear-gradient(
+    90deg,
+    #fe3131b3 0%,
+    #fcdb59be 22%,
+    #f0507a 58%,
+    #9aa0a6 72%,
+    #2fe0c9 100%
+  );
+  background-size: 300% 100%;
+  animation: shiftBase 18s ease-in-out infinite;
+}
+
+.wavy-banner::before,
+.wavy-banner::after {
+  content: "";
+  position: absolute;
+  inset: -20% -10%;
+  background-repeat: no-repeat;
+}
+
+.wavy-banner::before {
+  background-image:
+    radial-gradient(ellipse 60% 40% at 20% 30%, rgba(255,255,255,0.25), transparent 60%),
+    repeating-linear-gradient(
+      100deg,
+      transparent 0px,
+      transparent 60px,
+      rgba(255,255,255,0.08) 60px,
+      rgba(255,255,255,0.08) 120px
+    );
+  filter: blur(2px);
+  animation: driftOne 14s ease-in-out infinite alternate;
+  mix-blend-mode: overlay;
+}
+
+.wavy-banner::after {
+  background-image:
+    radial-gradient(ellipse 50% 70% at 80% 60%, rgba(240,80,122,0.55), transparent 60%),
+    radial-gradient(ellipse 45% 60% at 10% 80%, rgba(47,224,201,0.5), transparent 60%),
+    radial-gradient(ellipse 55% 50% at 55% 15%, rgba(249,233,78,0.5), transparent 65%),
+    radial-gradient(ellipse 40% 60% at 90% 10%, rgba(154,160,166,0.5), transparent 60%);
+  animation: driftTwo 20s ease-in-out infinite alternate;
+}
+
+@keyframes shiftBase {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes driftOne {
+  0%   { transform: translate(-4%, -2%) rotate(0deg) scale(1.1); }
+  100% { transform: translate(4%, 3%) rotate(2deg) scale(1.2); }
+}
+
+@keyframes driftTwo {
+  0%   { transform: translate(3%, -3%) scale(1.05); }
+  50%  { transform: translate(-3%, 2%) scale(1.15); }
+  100% { transform: translate(2%, -2%) scale(1.1); }
+}
+
+/* ==========================================================================
+   Text nav strip + Blue curve section
+   ========================================================================== */
+nav.main-nav {
+  display: block;
+  height: auto;
+  padding: 30px 20px;
+  background: transparent;
+  text-align: center;
+}
+
+.main-nav a {
+  color: #fe3131b3;
+  font-weight: bold;
+  font-size: 16px;
+  text-decoration: none;
+  margin: 0 4px;
+}
+
+.main-nav a:hover {
+  text-decoration: underline;
+}
+
+.main-nav .dot {
+  color: #f0507a;
+  font-size: 8px;
+  margin: 0 6px;
+  position: relative;
+  top: -4px;
+}
+
+.blue-curve {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  background: #fe3131b3;
+  overflow: hidden;
+}
+
+.blue-curve .curve-top {
+  position: absolute;
+  top: -1px;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  display: block;
+}
+
+.blue-curve .curve-bottom {
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  display: block;
+}
+
+
+
+
+
+
+
+
+
+
+.spacer {
+  height: 800px;
+  background: #f7f7f7;
+}
